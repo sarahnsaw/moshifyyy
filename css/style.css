@@ -116,6 +116,25 @@ p {
     font-size: 1.6rem;
   }
 }
+
+/* Grids */
+
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+.grid--1x3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+}
+
 /* Links */
 a {
   text-decoration: none;
@@ -196,9 +215,10 @@ a {
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 1024px);
-.list--tick .list__item {
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item {
   padding-left: 0;
+  }
 }
 
 /* icons*/
@@ -243,10 +263,18 @@ a {
   font-size: 1.8rem;
   font-weight: 600;
   margin: 1rem 0;
+  outline: 0;
   padding: 2rem 3rem;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: midde;
 }
 
 .btn--primary {
@@ -321,7 +349,7 @@ a {
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
 }
 
 .input-group .btn {
@@ -422,21 +450,7 @@ a {
     margin-top: 1rem;
   }
 
-  /* Grids */
-
-  .grid {
-    display: grid;
-  }
-
-  @media screen and (min-width: 768px) {
-    .grid--1x2 {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .grid--1x3 {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  
 
   /* Testimonials */
 
@@ -493,9 +507,10 @@ a {
   text-align: center;
 }
 
-@media screen and (min-width: 768px);
+@media screen and (min-width: 768px) {
 .callout .grid--1x2 {
   grid-template-columns: 1fr auto;
+}
 }
 
 .callout__content {
@@ -627,6 +642,7 @@ a {
   .nav__toggler {
     display: none;
   }
+}
   .nav__list {
     width: auto;
     display: flex;
@@ -667,5 +683,31 @@ a {
   .hero__content {
     text-align: left;
     align-self: center;
+  }
+}
+
+/* Domain Block  */
+
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 670px;
+}
+
+.block-domain__prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  font-size: 2rem;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)
   }
 }
